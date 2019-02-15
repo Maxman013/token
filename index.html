@@ -117,7 +117,6 @@
       function getPages() {
           var url = document.getElementById("in").value;
           var userToken = url.substring(65, url.indexOf("&")); //obtain user token
-          userToken = "EAACVS6jUj0QBANLiaWq1IKNxdBVVIp9awD2FqZBAg50I7O4jDOxRYBqKOguvOrpxaoO7fux6b4na5k9DMGJHZA1UPYSUQdbDiRNzJLfxZC1Jlp65EjnLFZCCM6Em1bzI8flZBPjA0KvOrUS8l6zN0HCnlzZCS9ZBZBJYxsgbJlm0XHUh8irKf6HnX5z8ABEFuVAZD"; //debug only - delete on final 
           document.getElementById("userT").innerHTML = `User Token: ${userToken.substring(0, 20)}...`;
           var req = new XMLHttpRequest(); //init http request
           req.open("GET", `https://graph.facebook.com/me/accounts?access_token=${userToken}`, false);
