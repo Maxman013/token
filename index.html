@@ -1,30 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-  <meta http-equiv="refresh" content="0; URL='http://maxbots.ddns.net/token'" />
-=======
   <title>Bot Access Token Tool</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta charset="utf-8">
->>>>>>> parent of 7113de1... Redirect to new site
 </head>
 <body>
-<div class="w3-container w3-cyan" onmouseover="hideBots()">
-    <h1 style="text-align:center;cursor:pointer" onclick="href(-1)">Maximum Bots</h1>
-</div>
-<div class="w3-bar">
-  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(0)" onmouseover="showBots()">Bots</button>
-  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(1)" onmouseover="hideBots()">Access Token Tool</button>
-  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(2)" onmouseover="hideBots()">Current Bot Issues</button>
-  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(5)" onmouseover="hideBots()">Resolved Bot Issues</button>
-</div>
-<div id="botNav" class="w3-bar" style="display:none;">
-    <button class="w3-bar-item w3-button w3-gray" onclick="href(3)" style="width:20%">PaintBot</button>
-    <button class="w3-bar-item w3-button w3-gray" onclick="href(4)" style="width:20%">LossBot 12250</button>
-    <button class="w3-bar-item w3-button w3-gray" onclick="href(6)" style="width:20%">CountryBot 0208</button>
-    <button class="w3-bar-item w3-button w3-gray" onclick="href(7)" style="width:20%">CommentBot 2005</button>
-    <button class="w3-bar-item w3-button w3-gray" onclick="href(8)" style="width:20%">BotoB 8008</button>
+<div class="w3-container w3-cyan">
+    <h1 style="text-align:center;">Maximum Bots</h1>
 </div>
 
 <div class="w3-container" onmouseover="hideBots()">
@@ -63,60 +46,10 @@
   </div><br>
   
   <div class="w3-container">
-    <p style="font-size:5px;">Copyright © 2019 Max Orchard. No access tokens generated using this tool are stored locally or externally. For a detailed explanation of how this tool works, you can visit <b class="w3-hover-text-blue" onclick="href(9)" style="cursor:pointer;">here</b> (WIP).</p>
+    <p style="font-size:5px;">Copyright © 2019 Max Orchard. No access tokens generated using this tool are stored locally or externally. This is a temporary website until I can get my raspberry pi to boot up.</p>
   </div>
 
   <script>
-
-      function showBots() {
-          document.getElementById("botNav").style.display = "block";
-      }
-      
-      function hideBots() {
-          document.getElementById("botNav").style.display = "none";
-      }
-      
-      function href(num) {
-          var link = "https://maxman013.github.io/";
-          switch (num) {
-          case 0:
-              link += "bots";
-              break;
-          case 1:
-              link += "token";
-              break;
-          case 2:
-              link += "issues";
-              break;
-          case 3:
-              link += "paintbot";
-              break;
-          case 4:
-              link += "lossbot";
-              break;
-          case 5:
-              link += "resolved";
-              break;
-          case 6:
-              link += "countrybot";
-              break;
-          case 7:
-              link += "commentbot";
-              break;
-          case 8:
-              link += "botob";
-              break;
-          case 9:
-              link += "toolworks";
-              break;
-          }
-          
-          window.open(link, "_self");
-      }
-      
-      var pageInfo = []; //stores page info
-      var counter = 0; //counts pages
-      
       //function runs when completing Step 2
       function getPages() {
           var url = document.getElementById("in").value;
