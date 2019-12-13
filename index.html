@@ -6,23 +6,23 @@
     <meta charset="utf-8">
 </head>
 <body>
-<div class="w3-container w3-cyan">
-    <h1 style="text-align:center;">Maximum Bots</h1>
+  <div class="w3-container w3-cyan">
+    <h1 style="text-align:center">Maximum Bots</h1>
 </div>
 
-<div class="w3-container" onmouseover="hideBots()">
-  <p>This is a tool designed to let you get an access token to allow a Facebook bot to autopost. You use this access token in your API requests for authentication purposes. The autoposting uses an app I created on Facebook developers called <b>BOT ACCESS TOKEN TOOL - Paintmin</b>. The access token you receive never expires, unless the account that logged in to the app in Step 1 or the page that is linked gets zucced.</p>
+<div class="w3-container">
+  <p>This is a tool designed to let you get an access token to allow a Facebook bot to autopost. You use this access token in your API requests for authentication purposes. The autoposting uses an app I created on Facebook developers called <b>BOT ACCESS TOKEN TOOL (Public)</b>. The access token you receive never expires, unless the account that logged in to the app in Step 1 or the page that is linked gets zucced.</p>
   <p>Currently the tool does not support pagination, I wanted to rewrite it so it looked a tad better before I added pagination support.</p>
 </div>
 
 <div class="w3-container" id="1c">
   <h1 class="w3-bold">Step 1 - Logging In</h1>
-  <p>Click <b> <a class="w3-hover-text-blue" style="font-size:18px;" href="https://www.facebook.com/v3.1/dialog/oauth?client_id=164152187588420&redirect_uri=https%3A%2F%2Fwww.facebook.com%2Fconnect%2Flogin_success.html&scope=manage_pages%2Cpublish_pages%2Cpages_show_list&state=&response_type=token">here</a></b> to login to the app. Make sure you allow all permissions that have been requested, or else this whole process will not work.</p>
+  <p>Click <b> <a class="w3-hover-text-blue" style="font-size:18px;" target="_blank" href="https://www.facebook.com/v3.1/dialog/oauth?client_id=164152187588420&redirect_uri=https%3A%2F%2Fwww.facebook.com%2Fconnect%2Flogin_success.html&scope=manage_pages%2Cpublish_pages%2Cpages_show_list&state=&response_type=token">here</a></b> to login to the app. Make sure you allow all permissions that have been requested (<a style="font-family:Courier">manage_pages</a>, <a style="font-family:Courier">publish_pages</a>, <a style="font-family:Courier">pages_show_list</a>), or else this whole process will not work.</p>
 </div>
 
 <div class="w3-container" id="2c">
   <h1 class="w3-bold">Step 2 - Obtaining User Access Token</h1>
-  <p>As soon as you log in, copy the URL that you are redirected to (before you are redirected to <a style="font-family:Courier">https://www.facebook.com/connect/blank.html#_=_</a>) and paste it here (it should look a bit like <a style="font-family:Courier">https://www.facebook.com/connect/login_success.html#access_token=...</a>)</p>
+  <p>After you log in, copy the URL that you are redirected to (before you are redirected to <a style="font-family:Courier">https://www.facebook.com/connect/blank.html#_=_</a>) and paste it here (it should look a bit like <a style="font-family:Courier">https://www.facebook.com/connect/login_success.html#access_token=...</a>)</p>
   <form id="frm-user">
     <input id="in" type="text" style="font-family:Courier;width:100%;">
   </form>
@@ -46,10 +46,13 @@
   </div><br>
   
   <div class="w3-container">
-    <p style="font-size:5px;">Copyright © 2019 Max Orchard. No access tokens generated using this tool are stored locally or externally. This is a temporary website until I can get my raspberry pi to boot up.</p>
+    <p style="font-size:5px;">Copyright © 2019 Max Orchard. No access tokens generated using this tool are stored locally or externally. This is a temporary location for the token tool until I can fix the issues I am having with my Raspberry Pi.</p>
   </div>
 
   <script>
+      var pageInfo = []; //stores page info
+      var counter = 0; //counts pages
+      
       //function runs when completing Step 2
       function getPages() {
           var url = document.getElementById("in").value;
